@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Sistemas de notas fiscais{% endblock %}
+
+
+
+{% block content %}
+{% include 'navbar.html' %}
+
+
+<div class="container mt-5 mb-5">
+
+    <form class="row g-3">
+
+        <div class="col-md-6">
+          <label for="nome_razao_social" class="form-label">Nome/Razão Social</label>
+          <input type="text" class="form-control" id="nome_razao_social">
+        </div>
+
+        <div class="col-md-6">
+          <label for="endereco" class="form-label">Endereço</label>
+          <input type="text" class="form-control" id="endereco">
+        </div>
+
+        <div class="col-6">
+          <label for="bairro" class="form-label">Bairro</label>
+          <input type="text" class="form-control" id="bairro" placeholder="Seu bairro...">
+        </div>
+
+        <div class="col-6">
+          <label for="municipio" class="form-label">Município</label>
+          <input type="text" class="form-control" id="municipio" placeholder="Sua cidade...">
+        </div>
+
+        <div class="col-md-6">
+          <label for="cep" class="form-label">CEP</label>
+          <input type="text" class="form-control" id="cep">
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputState" class="form-label">UF</label>
+          <select id="inputState" class="form-select">
+            <option selected>Estados...</option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AP">AP</option>
+            <option value="AM">AM</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="MG">MG</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PR">PR</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SP">SP</option>
+            <option value="SE">SE</option>
+            <option value="TO">TO</option>
+          </select>
+
+        </div>
+
+        <div class="col-md-6">
+          <label for="cnpj_cpf" class="form-label">CNPJ/CPF</label>
+          <input type="text" class="form-control" id="cnpj_cpf">
+        </div>
+
+        <div class="col-md-6">
+            <label for="inscricao_estadual" class="form-label">Inscrição estadual</label>
+            <input type="text" class="form-control" id="inscricao_estadual">
+        </div>
+
+        <h6 class="my-3">Descrição das mercadorias/serviço prestado</h6>
+        <hr/>
+
+
+        <div class="col-md-3">
+            <label for="desc_produto" class="form-label">Descrição do produto/serviço</label>
+            <input type="text" class="form-control" id="desc_produto">
+          </div>
+  
+        <div class="col-md-3">
+              <label for="quantidade" class="form-label">Quantidade</label>
+              <input type="number" class="form-control" id="quantidade">
+        </div>
+
+        <div class="col-md-3">
+            <label for="valor_unitario" class="form-label">Valor unitário</label>
+            <input type="text" class="form-control" id="valor_unitario">
+          </div>
+  
+        <div class="col-md-3">
+              <label for="valor_total" class="form-label">Valor total</label>
+              <input type="text" class="form-control" id="valor_total">
+        </div>
+        
+
+        <div class="col-12 d-flex justify-content-end">
+          <button type="submit" class="btn btn-dark">Emitir Nota</button>
+        </div>
+        
+      </form>
+
+
+</div>
+
+
+{% endblock %}
