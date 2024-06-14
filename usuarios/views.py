@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login as login_django
 from django.contrib import messages
 from django.contrib import auth
 from django.contrib.messages import constants
+from django.urls import reverse
 # Create your views here.
 
 
@@ -55,7 +56,7 @@ def login(request):
 
         if user is not None:
             login_django(request, user)
-            return redirect()
+            return redirect('notas:home')
         else:
             messages.add_message(request, constants.ERROR, 'Usuário ou senha incorretos!')
             return redirect('usuarios:login')
@@ -65,4 +66,4 @@ def login(request):
 def logout(request):
     if request.method == 'GET':
         auth.logout(request)
-        redirect('usuarios:login')
+        return redirect(reverse('usuarios:login'))
