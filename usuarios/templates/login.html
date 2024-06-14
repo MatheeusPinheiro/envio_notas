@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Cadastro{% endblock %}
+{% block title %} Login{% endblock %}
 
 
 {% block head %}
@@ -54,7 +54,11 @@
                 <div>
                     <input class="btn btn-dark w-100 py-3" type="submit" value="Entrar">
                 </div>
-
+                
+                <hr class="my-3">
+                <div class="d-flex justify-content-end">
+                    <span>Ainda não tem conta? <a href="{% url 'usuarios:cadastro' %}">Cadastre-se</a></span>
+                </div>
 
             </form>
 
