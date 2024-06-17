@@ -15,6 +15,7 @@ class NotaForm(forms.ModelForm):
             'municipio': forms.TextInput(attrs={'class': 'form-control', 'id': 'municipio'}),
             'uf': forms.Select(attrs={'class': 'form-select', 'id': 'estado'}),
             'inscricao_estadual': forms.TextInput(attrs={'class': 'form-control', 'id': 'inscricao_estadual'}),
+            'descricao': forms.TextInput(attrs={'class': 'form-control', 'id': 'descricao'}),
             'quantidade': forms.NumberInput(attrs={'class': 'form-control', 'id': 'quantidade'}),
             'valor_unitario': forms.NumberInput(attrs={'class': 'form-control', 'id': 'valor_unitario'}),
             'valor_total': forms.NumberInput(attrs={'class': 'form-control', 'id': 'valor_total'}),

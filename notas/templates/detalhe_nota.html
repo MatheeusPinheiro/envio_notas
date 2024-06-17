@@ -1,0 +1,114 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Sistemas de notas
+fiscais{% endblock %} {% block content %} {% include 'navbar.html' %}
+
+<div class="container-fluid py-5">
+
+
+  <div class="container mt-4">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1" aria-selected="true">Cliente/Fornecedor</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2" aria-selected="false">Produto/Serviço</a>
+        </li>
+    </ul>
+
+    <div class="tab-content mt-2">
+        <div id="tab-1" class="tab-pane fade show active " role="tabpanel">
+
+         <div class="d-flex mb-3 gap-2">
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label for="" class="fw-bold">Nome/Razão Social: </label>
+              {{nota.cliente}}
+          </div>
+
+          <div class="col-md-6 mb-2 border py-2 rounded px-2">
+            <label class="fw-bold" for="">Endereço: </label>
+            {{nota.endereco}}
+          </div>
+         </div>
+
+          <div class="d-flex mb-3 gap-2">
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label class="fw-bold" for="">Bairro: </label>
+              {{nota.bairro}}
+            </div>
+  
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label class="fw-bold" for="">CEP: </label>
+              {{nota.cep}}
+            </div>
+          </div>
+
+          <div class="d-flex mb-3 gap-2">
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label class="fw-bold" for="">Município: </label>
+              {{nota.municipio}}
+            </div>
+  
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label class="fw-bold" for="">UF: </label>
+              {{nota.uf}}
+            </div>
+          </div>
+
+          <div class="d-flex mb-3 gap-2">
+
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label class="fw-bold" for="">CNPJ/CPF: </label>
+              {{nota.cpf_cnpj}}
+            </div>
+
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label class="fw-bold" for="">Inscrição Estadual: </label>
+              {{nota.inscricao_estadual}}
+            </div>
+
+          </div>
+          
+        </div>
+
+
+        <div id="tab-2" class="tab-pane fade" role="tabpanel">
+
+          <div class="d-flex mb-3 gap-2">
+
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label for="" class="fw-bold">Descrição do produto/serviço: </label>
+              {{nota.descricao}}
+            </div>
+
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label class="fw-bold" for="">Quantidade: </label>
+              {{nota.quantidade}}
+            </div>
+
+         </div>
+
+          <div class="d-flex mb-3 gap-2">
+
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label class="fw-bold" for="">Valor unitário: </label>
+              {{nota.valor_unitario}}
+            </div>
+  
+            <div class="col-md-6 mb-2 border py-2 rounded px-2">
+              <label class="fw-bold" for="">Valor total: </label>
+              {{nota.valor_total}}
+            </div>
+
+          </div>
+
+          
+        </div>
+
+
+    </div>
+</div>
+
+  
+ 
+
+
+{% endblock %}

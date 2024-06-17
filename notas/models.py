@@ -43,6 +43,11 @@ class Nota(models.Model):
     municipio = models.CharField(max_length=150)
     uf = models.CharField(max_length=2,  choices=ESTADOS_BRASIL)
     inscricao_estadual = models.CharField(max_length=150)
+    descricao = models.CharField(max_length=255, blank=True, null=True)
     quantidade = models.IntegerField()
     valor_unitario = models.DecimalField(max_digits=10, decimal_places=2)
     valor_total = models.DecimalField(max_digits=10, decimal_places=2)
+
+
+    def __str__(self) -> str:
+        return self.cliente

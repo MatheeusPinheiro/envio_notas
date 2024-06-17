@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse,redirect
+from django.shortcuts import render,HttpResponse,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Nota
 from .forms import NotaForm
@@ -8,7 +8,9 @@ from django.contrib.messages import constants
 
 @login_required(login_url='usuarios:login')
 def home(request):
-    return render(request, 'home.html')
+    notas = Nota.objects.all()
+    context = {'notas': notas}
+    return render(request, 'home.html', context)
 
 
 @login_required(login_url='usuarios:login')
@@ -23,3 +25,11 @@ def cadastrar_nota(request):
         form = NotaForm()
 
     return render(request, 'cadastrar_nota.html', {'form': form})
+
+
+
+@login_required(login_url='usuarios:login')
+def detalhe_nota(request, id):
+    nota = get_object_or_404(Nota, pk=id)  # Obtém a nota com base no id fornecido
+    context = {'nota': nota}
+    return render(request, 'detalhe_nota.html', context)
