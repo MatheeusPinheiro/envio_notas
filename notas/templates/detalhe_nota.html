@@ -1,5 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block title %} Sistemas de notas
-fiscais{% endblock %} {% block content %} {% include 'navbar.html' %}
+fiscais{% endblock %} 
+
+
+{% block content %} 
+{% include 'navbar.html' %}
 
 <div class="container-fluid py-5">
 
@@ -14,7 +18,7 @@ fiscais{% endblock %} {% block content %} {% include 'navbar.html' %}
         </li>
     </ul>
 
-    <div class="tab-content mt-2">
+    <div class="tab-content mt-2" style="min-height: 250px;">
         <div id="tab-1" class="tab-pane fade show active " role="tabpanel">
 
          <div class="d-flex mb-3 gap-2">
@@ -105,9 +109,13 @@ fiscais{% endblock %} {% block content %} {% include 'navbar.html' %}
 
 
     </div>
-</div>
-
   
+  
+  
+  
+  </div>
+
+</div>
  
 
 
